@@ -1,0 +1,18 @@
+.Sideber
+  .Sideber__header
+    .Sideber__header__user
+      .Sideber__header__user--name
+        = current_user.name
+      .Sideber__header__user--menu
+      = link_to "#", class: "new-group" do
+        = icon('far', 'edit',class: "Sideber__header__user--menu--icon1")
+        %spam<>
+      = link_to edit_user_path(current_user), class: "group" do
+        = icon('fas', 'cog',class: "Sideber__header__user--menu--icon2")
+        %spam<>
+  .Sideber__group
+    .Sideber__group__box
+      .Sideber__group__box--name
+        techcamp
+      .Sideber__group__box--message
+        まだメッセージがありません

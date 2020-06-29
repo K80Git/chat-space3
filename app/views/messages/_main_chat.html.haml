@@ -1,0 +1,40 @@
+.Chatmain
+  .Chatmain__header
+    .Chatmain__header__left
+      .Chatmain__header__left--test
+        test
+      .Chatmain__header__left--member
+        %ul(class='current-group') Member:
+        %li(class='member') Masa
+        %li(class='member') wamon
+    .Chatmain__header__right
+      .Chatmain__header__right--box
+      = link_to "#", class: "edit" do
+        Edit
+  .Chatmain__message
+    .Chatmain__message__box
+      .Chatmain__message__box--list
+        .Chatmain__message__box--list--name
+          %ul(class='current-group') 名前
+          %li(class='member') 2015/05/05　00：00
+        .Chatmain__message__box--list--message
+          おはよう！
+        .Chatmain__message__box--list--name
+          %ul(class='current-group') 名前
+          %li(class='member') 2015/05/05　00：00
+        .Chatmain__message__box--list--message
+          今日は夜から雨
+    .Chatmain__message--form
+      .Chatmain__message--form--box
+        .Chatmain__message--form--box--message
+          .Chatmain__message--form--box--message--area
+            %form_with 
+              %input{type: 'text',placeholder: "type a message"}
+          .Chatmain__message--form--box--message--fail
+            %form_with 
+              %label
+                %input{type: "file"}
+                  = icon('fas', 'image')
+            
+        .Chatmain__message--form--box--sent
+          %input{type: "submit" ,value: "Send"} 
