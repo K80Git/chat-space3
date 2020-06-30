@@ -43,23 +43,31 @@
       }
     }
   }
-  &__group {
+  &__main{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    position: relative;
-    &__box {
-      height: 91px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      &--name {
-        font-size: 15px;
-        font-weight: bold;
-      }
-      &--message {
-        font-size: 11px;
-        margin-top: 5px;
-        font-weight: bold;
+    &__group {
+      position: relative;
+      &__box {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        &--contents{
+          height: 91px;
+          .name {
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color:white;
+          }
+          .message {
+            font-size: 11px;
+            margin-top: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            color:white;
+          }
+        }
       }
     }
   }
@@ -68,37 +76,45 @@
   width: calc(100vw - 300px);
   background-color: #ffffff;
   &__header {
+    width: 100%;
+    height: 100px;
     @include flxBx();
     border-bottom: 1px solid #eeeeee;
-    height: 100px;
-    padding: 0 40px;
-    justify-content: space-between;
+    position: relative;
     &__left {
-      &--test {
+      position: absolute;
+      top: 35px;
+      left: 40px;
+      width: 300px;
+      &--groupName {
         font-size: 20px;
         color: #333333;
       }
       &--member {
         font-size: 12px;
         color: #999999;
+        width: auto;
+        margin-left: 5px;
         ul {
           display: inline;
           float: left;
           list-style: none;
-        }
-        li {
-          display: inline;
-          float: left;
-          list-style: none;
+          .member {
+            display: inline;
+            float: left;
+            list-style: none;
+            background-color: red;
+          }
         }
       }
     }
     &__right {
+      position: absolute;
+      right: 40px;
       height: 40px;
       width: 72px;
       padding: 0 20px 0 20px;
       border: 1px solid #38aef0;
-      margin: 28px 40px 0 0;
       display: flex;
       justify-content: center;
       .edit {
@@ -112,25 +128,22 @@
     }
   }
   &__message {
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
     &__box{
-      background-color: #fafafa;
-      height: calc(100vh - 190px);
       padding: 35px 0 0 40px;
       &--list {
         font-size: 20px;
         display: flex;
-        align-items: left;
-        flex-direction: column;
-        &--name {
-          display: block;
-          ul {
+        &--profile {
+          &--name {
             font-size: 16px;
             color: #333333;
             display: inline;
             float: left;
             list-style: none;
           }
-          li {
+          &--time {
             font-size: 12px;
             color:#999999;
             display: inline;
@@ -140,6 +153,9 @@
           }
         }
         &--message {
+          display: block;
+          clear:left;
+          float: left;
           font-size: 14px;
           color: #434A54;
           margin:12px 0 46px 0;
@@ -151,54 +167,46 @@
       height: 90px;
       @include flxBx();
       &--box {
-        @include flxBx();
-        margin: 0 40px;
-        justify-content: space-between;
+        margin: 50px 25px;
+        align-items: center;
         &--message {
           @include flxBx();
           height: 50px;
-          width: calc(100vw - 500px);
-          background-color: white;
-          justify-content: space-between;
-          position: relative;
-          &--area{
-            width: 90%;
-            input{
-              color: black;
-              margin-left: 15px;
+          width: calc(100vw - 340px);
+          .Form {
+            width: 100%;
+            position: relative;
+            @include flxBx();
+            justify-content: space-between;
+            .Form__inputContent {
               border:none;
-              width:100%;
+              width: 100%;
+              background-color: white;
+              padding: 12px 0 12px 15px
             }
-          }
-          &--fail {
-            float: right;
-            position: absolute;
-            right: 25px;
-            top:30;
-            label { 
-              input{
-                position: absolute;
-                right: 25px;
-                top:30;
-                display: none;
-              }
+            .Form__inputImage {
+              float: right;
+              position: absolute;
+              right: 55px;
+              top:15px;
             }
-          }
-        }
-        &--sent {
-          display: inline-block;
-          background-color: #38aef0;
-          color:#ffffff;
-          font-size: 16px;
-          height: 50px;
-          width: 100px;
-          padding: 12px 30px;
-          margin-left: 15px;
-          input {
-            border : none;
-            text-decoration: none;
-            background-color:  #38aef0;
-            color:white;
+            .Form__icon {
+              position: absolute;
+              right: 85px;
+              top: 0px;
+            }
+            .Hidden {
+              display: none;
+            }
+            .Form__submit {
+              background-color: #38aef0;
+              color:#ffffff;
+              font-size: 16px;
+              height: 50px;
+              width: 100px;
+              margin-left: 15px;
+              border: none;
+            }
           }
         }
       }

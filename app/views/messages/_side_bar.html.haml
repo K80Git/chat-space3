@@ -10,9 +10,13 @@
       = link_to edit_user_path(current_user), class: "group" do
         = icon('fas', 'cog',class: "Sideber__header__user--menu--icon2")
         %spam<>
-  .Sideber__group
-    .Sideber__group__box
-      .Sideber__group__box--name
-        techcamp
-      .Sideber__group__box--message
-        まだメッセージがありません
+  .Sideber__main
+    .Sideber__main__group
+      .Sideber__main__group__box
+        - current_user.groups.each do |group|
+          .Sideber__main__group__box--contents
+            = link_to group_messages_path(group) do
+              .name
+                = group.name
+              .message
+                = group.show_last_message
