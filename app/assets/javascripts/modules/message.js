@@ -1,8 +1,9 @@
 $(function(){
+  
   function buildHTML(message){
     if (message.image) {
       let html =
-      `<div class="Chatmain__message__box">
+      `<div class="Chatmain__message__box" data-message-id=${message.id}>
           <div class="Chatmain__message__box--list">
             <div class="Chatmain__message__box--list--profile">
               <div class="Chatmain__message__box--list--profile--name">
@@ -20,7 +21,7 @@ $(function(){
         return html;
     } else {
       let html = 
-        `<div class="Chatmain__message__box">
+        `<div class="Chatmain__message__box" data-message-id=${message.id}>
           <div class="Chatmain__message__box--list">
             <div class="Chatmain__message__box--list--profile">
               <div class="Chatmain__message__box--list--profile--name">
@@ -61,6 +62,7 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.Form__submit').prop("disabled", false);
     });
   });
 });
