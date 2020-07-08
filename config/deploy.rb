@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "chat-space"
-set :repo_url, "git@example.com:K80git/chat-space3.git"
+set :repo_url, "git@example.com:K80Git/chat-space3.git"
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
@@ -12,7 +12,7 @@ set :rbenv_ruby, '2.6.5' #カリキュラム通りに進めた場合、2.6.5で�
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/chatspace.pem）>'] 
+                  keys: ['~/.ssh/chatspace.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
