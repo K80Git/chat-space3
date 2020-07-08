@@ -4,7 +4,7 @@
       .Sideber__header__user--name
         = current_user.name
       .Sideber__header__user--menu
-      = link_to "#", class: "new-group" do
+      = link_to new_group_path, class: "new-group" do
         = icon('far', 'edit',class: "Sideber__header__user--menu--icon1")
         %spam<>
       = link_to edit_user_path(current_user), class: "group" do
