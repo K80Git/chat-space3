@@ -1,9 +1,8 @@
 .Chatmain
   .Chatmain__header
     .Chatmain__header__left
-      - current_user.groups.each do |group|
-        .Chatmain__header__left--groupName
-          = group.name
+      .Chatmain__header__left--groupName
+        = @group.name
         .Chatmain__header__left--member
           %ul(class='current-group') Member: 
           .member 
